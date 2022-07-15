@@ -41,28 +41,45 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="-40dp"
-                    android:background="@color/game_screen_background"
                     android:theme="@style/UpCorners"
-                    app:cardElevation="30dp"
+                    app:cardBackgroundColor="@color/game_screen_background"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rvReviews"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:background="@color/game_screen_background"
-                        android:clipToPadding="true"
-                        android:visibility="visible"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:itemCount="2"
-                        tools:listitem="@layout/layout_review_item" />
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/sk_modernist_regular"
+                            android:textColor="@color/gray_text"
+                            tools:text="Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the Ancient, whilst defending their own." />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_reviews"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@color/game_screen_background"
+                            android:clipToPadding="true"
+                            android:visibility="visible"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:itemCount="2"
+                            tools:listitem="@layout/layout_review_item" />
+                    </LinearLayout>
+
+
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
 
