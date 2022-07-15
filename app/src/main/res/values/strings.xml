@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Sirius</string>
+    <string name="app_name">DedInsideApp</string>
+    <string name="review_and_ratings_title"><![CDATA[Review & Ratings]]></string>
+    <string name="reviews_title">%s Reviews</string>
 </resources>

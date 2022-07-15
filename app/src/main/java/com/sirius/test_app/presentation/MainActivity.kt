@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.sirius.test_app.R
 import com.sirius.test_app.core.ext.applyButtonClickAnimation
 import com.sirius.test_app.core.ext.fullScreen
 import com.sirius.test_app.databinding.ActivityMainBinding
@@ -31,8 +32,11 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 reviewListAdapter.submitList(it.reviews)
-                Log.e("gttrgt", it.reviews.size.toString())
 
+                tvDescription.text = it.description
+                tvRating.text = it.rating.toString()
+                ratingBarIndicator.rating = it.rating
+                tvReviews.text = getString(R.string.reviews_title, it.gradeCnt)
                 btnInstall.text = it.action.name
             }
         }

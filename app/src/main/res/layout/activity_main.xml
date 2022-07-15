@@ -23,7 +23,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:background="@color/game_screen_background"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toTopOf="@id/btn_install"
                 app:layout_constraintTop_toTopOf="parent">
@@ -51,24 +50,89 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/game_screen_background"
                         android:orientation="vertical">
 
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/tv_description"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
+                            android:layout_marginBottom="16dp"
                             android:fontFamily="@font/sk_modernist_regular"
+                            android:paddingHorizontal="24dp"
                             android:textColor="@color/gray_text"
+                            android:textSize="14sp"
                             tools:text="Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the Ancient, whilst defending their own." />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/sk_modernist_bold"
+                            android:paddingHorizontal="24dp"
+                            android:text="@string/review_and_ratings_title"
+                            android:textColor="@color/white"
+                            android:textSize="17sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_rating"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/sk_modernist_bold"
+                                android:paddingHorizontal="24dp"
+                                android:textColor="@color/white"
+                                android:textSize="48sp"
+                                tools:text="4.9" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <RatingBar
+                                    android:id="@+id/ratingBar_indicator"
+                                    style="?android:attr/ratingBarStyleSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:numStars="5"
+                                    android:paddingBottom="8dp"
+                                    android:stepSize="0.1"
+                                    android:theme="@style/MyRatingBar" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/tv_reviews"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sk_modernist_bold"
+                                    android:gravity="start"
+                                    android:textAlignment="textStart"
+                                    android:textColor="@color/gray_text"
+                                    android:textSize="13sp"
+                                    tools:text="70M Reviews" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginHorizontal="40dp"
+                            android:layout_marginVertical="16dp"
+                            android:background="@color/underline" />
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/rv_reviews"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:background="@color/game_screen_background"
                             android:clipToPadding="true"
                             android:visibility="visible"
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

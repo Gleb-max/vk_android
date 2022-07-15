@@ -8,7 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="yellow">#F4D144</color>
     <color name="main_button">#F4D144</color>
     <color name="game_screen_background">#050B18</color>
     <color name="gray_text">#A8ADB7</color>
+    <color name="underline">#1A1F29</color>
 </resources>
